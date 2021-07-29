@@ -5,6 +5,13 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :content %>
+    <%= f.input :image, as: :hidden, input_html: { value: @post.cached_image_data } %>
+    <%= f.input :image, as: :file %>
+    <% if @post.image %>
+      <p>
+        <%= image_tag @post.image_url, class: "img-thumbnail", style: "max-width: 150px; max-height: 150px" %>
+      </p>
+    <% end %>
   </div>
 
   <div class="form-actions">
