@@ -1,0 +1,18 @@
+<section class="app-jumbotron jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Demo for Shrine 💜</h1>
+    <p class="lead text-muted">
+      A simple demo for the ruby gem <%= link_to 'Shrine', "https://rubygems.org/gems/shrine/" %>.
+      Shrine is a toolkit for file attachments in Ruby applications. It supports uploading, downloading, processing and
+      deleting IO objects, backed by various storage engines. It uses efficient streaming for low memory usage. Shrine
+      comes with a high-level interface for attaching uploaded files to database records, saving their location and
+      metadata to a database column, and tying them to record's lifecycle. It natively supports background jobs and
+      direct uploads for fully asynchronous user experience.
+      Following a <%= link_to 'tutorial', "https://grafikart.fr/tutoriels/shrine-upload-fichier-965" %> made by Grafikart.
+
+    </p>
+    <p>
+      <%= link_to "Shrine Example", posts_path, class: "btn btn-primary px-4 mx-2" %>
+    </p>
+  </div>
+</section>

@@ -6,11 +6,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  <%= render "header" %>
+  <%= render "flash" %>
+  <%= render "jumbotron" if controller?("home") %>
+  <%= render "breadcrumb" %>
+  <% unless controller?("home") %>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container py-5">
+  <% end %>
+  <%= yield %>
+  <% unless controller?("home") %>
+    </div>
+    </div>
+  <% end %>
+  <%= render "footer" %>
   </body>
 </html>

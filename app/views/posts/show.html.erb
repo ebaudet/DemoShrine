@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% content_for :breadcrumb do %>
+  <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+  <li class="breadcrumb-item active"><%= link_to "Posts", posts_path %></li>
+  <li class="breadcrumb-item active"><%= @post.name %></li>
+<% end %>
 
 <p>
   <strong>Name:</strong>

@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% content_for :breadcrumb do %>
+  <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+  <li class="breadcrumb-item active">Posts</li>
+<% end %>
 
 <h1>Posts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -26,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>

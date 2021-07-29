@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+// 1. Include functions & variables first
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+$custom-colors: (
+        "bootstrap": #563d7c,
+        "simpleform": #00617f
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+//// Custom bootstrap variables must be set or imported *before* bootstrap.
+//@import "~bootstrap";
+
+// App sections
+@import "application/breadcrumb";
+@import "application/flash";
+@import "application/footer";
+@import "application/header";
+@import "application/jumbotron";
+
+// Components
+@import "components/alert";
+@import "components/icon";
