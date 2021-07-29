@@ -24,3 +24,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // Components
 @import "components/alert";
 @import "components/icon";
+
+// Syntax highlight
+@import "vendor/pygments/solarized-light";

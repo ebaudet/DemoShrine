@@ -11,7 +11,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <%= markdown @post.content %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

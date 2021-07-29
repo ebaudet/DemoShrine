@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'inline_svg'
 gem 'kramdown'
 gem 'kramdown-parser-gfm'
+gem 'rouge'
+gem 'pygments.rb'
 gem 'simple_form'
 gem 'validates_timeliness'
 
