@@ -17,7 +17,6 @@
 <% if @post.image %>
   <p>
     <strong>image:</strong>s
-    <%# byebug %>
     image_url
     <%= image_tag @post.image_url, class: "img-fluid" %>
     <br>
