@@ -62,7 +62,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
 gem 'shrine'
+gem 'aws-sdk-s3', '~> 1.14'
+gem 'image_processing', '~> 1.10'
+gem 'uppy-s3_multipart', '>= 0.3.2'
+gem 'marcel'
 gem 'fastimage'
-gem 'image_processing'
+
+gem 'sucker_punch'

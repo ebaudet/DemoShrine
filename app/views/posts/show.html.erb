@@ -16,8 +16,19 @@
 
 <% if @post.image %>
   <p>
-    <strong>image:</strong>
+    <strong>image:</strong>s
+    <%# byebug %>
+    image_url
     <%= image_tag @post.image_url, class: "img-fluid" %>
+    <br>
+    image.derivation_url(:small)
+    <%= image_tag @post.image_url(:small), class: "img-fluid" %>
+    <br>
+    image_url(:medium)
+    <%= image_tag @post.image_url(:medium), class: "img-fluid" %>
+    <br>
+    derivation_url(:large)
+    <%= image_tag @post.image_url(:large), class: "img-fluid" %>
   </p>
 <% end %>
 
