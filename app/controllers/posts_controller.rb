@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    # @post.image_derivatives
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, success: "Post was successfully created." }
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, success: "Post was successfully destroyed." }
+      format.html { redirect_to action: :index, success: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
   end

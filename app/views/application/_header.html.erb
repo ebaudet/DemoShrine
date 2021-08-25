@@ -8,7 +8,8 @@
 
       <div class="collapse navbar-collapse" id="navbar-header">
         <ul class="navbar-nav ms-auto">
-          <%= content_tag(:li, link_to("Shrine Example", posts_path, class: "nav-link #{is_active?(posts_path)}"), class: "nav-item") %>
+          <%= content_tag(:li, link_to("Posts", posts_path, class: "nav-link #{is_active?(posts_path)}"), class: "nav-item") %>
+          <%= content_tag(:li, link_to("Albums", albums_path, class: "nav-link #{is_active?(albums_path)}"), class: "nav-item") %>
         </ul>
       </div>
     </div>

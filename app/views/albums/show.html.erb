@@ -1,0 +1,30 @@
+<% content_for :breadcrumb do %>
+  <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+  <li class="breadcrumb-item active"><%= link_to "Albums", albums_path %></li>
+  <li class="breadcrumb-item active"><%= @album.name %></li>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @album.name %>
+</p>
+
+<% if @album.cover_photo %>
+  <p>
+    <strong>cover :</strong>
+    <%= image_tag @album.cover_photo_url(:medium), class: "img-fluid" %>
+  </p>
+<% end %>
+
+<% if @album.photos.any? %>
+  <h2>Photos :</h2>
+  <% @album.photos.each do |photo| %>
+    <p>
+      <strong>photo : <%= photo.titre %></strong>
+      <%= image_tag photo.image_url(:medium), class: "img-fluid" %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
