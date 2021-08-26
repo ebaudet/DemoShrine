@@ -1,0 +1,21 @@
+<li>
+  <div class="media">
+    <%= image_tag photo.image_url(:small), width: 150, class: "img-thumnail mr-3" %>
+
+    <div class="media-body">
+      <%= f.input :titre %>
+      <%= f.input :_destroy, as: :boolean, name: "Remove Photo" %>
+    </div>
+
+<!--    <div class="media-body">-->
+<!--      <div class="form-group">-->
+        <%#= f.label :titre %>
+        <%#= f.text_field :titre, class: "form-control" %>
+<!--      </div>-->
+<!--      <div class="form-group">-->
+        <%#= f.label :_destroy, "Remove Photo" %>
+        <%#= f.check_box :_destroy %>
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+</li>

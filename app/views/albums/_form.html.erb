@@ -4,13 +4,46 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :cover_photo, as: :hidden, input_html: { value: f.object.cached_cover_photo_data } %>
-    <%= f.input :cover_photo, as: :file %>
+    <!-- will be replaced by Uppy -->
+    <%= f.input :cover_photo, as: :file, name: "cover_photo", multiple:false, input_html: {
+      accept: ImageUploader::ALLOWED_TYPES.join(","),
+      data: {
+        upload_server: upload_server,
+        preview_element: "preview-cover-photo",
+        upload_result_element: "album-cover-photo-upload-result",
+      }
+    } %>
+    <!-- for storing cover photo uploaded file data -->
+    <%= f.input :cover_photo, as: :hidden, input_html: {
+      value: f.object.cached_cover_photo_data,
+      id: "album-cover-photo-upload-result"
+    } %>
     <% if @album.cover_photo %>
       <p>
-        <%= image_tag @album.cover_photo_url, class: "img-thumbnail", style: "max-width: 150px; max-height: 150px" %>
+        <!-- static link to the thumbnail generated on attachment -->
+        <%= image_tag @album.cover_photo_url(:medium).to_s,
+                      class: "img-thumbnail file-upload-preview",
+                      style: "max-width: 150px; max-height: 150px",
+                      id: "preview-cover-photo" %>
       </p>
     <% end %>
+    <% if @album.persisted? %>
+      <%= f.input :photos, as: :file,
+                  label: "Select photos",
+                  input_html: {
+                    multiple: true,
+                    accept: ImageUploader::ALLOWED_TYPES.join(','),
+                    data: { upload_server: upload_server }
+                  } %>
+    <% end %>
+
+    <ul class="list-unstyled file-upload-list" id="album-photo-list">
+      photos render
+      <%= f.fields_for :photos do |pf| %>
+        <%# byebug %>
+        <%= render partial: "photo", locals: { photo: pf.object, f: pf } %>
+      <% end %>
+    </ul>
   </div>
 
   <div class="form-actions">

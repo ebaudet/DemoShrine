@@ -23,3 +23,16 @@ import 'js/site'
 // Images
 const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)
+
+import { singleFileUpload, multipleFileUpload } from 'fileUpload'
+
+// Use 'DOMContentLoaded' event if not using Turbolinks
+document.addEventListener('turbolinks:load', () => {
+    document.querySelectorAll('input[type=file]').forEach(fileInput => {
+        if (fileInput.multiple) {
+            multipleFileUpload(fileInput)
+        } else {
+            singleFileUpload(fileInput)
+        }
+    })
+})
