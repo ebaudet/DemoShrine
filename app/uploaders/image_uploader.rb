@@ -1,22 +1,23 @@
+# frozen_string_literal: true
 class ImageUploader < Shrine
-  ALLOWED_EXTENSION = %w[jpg jpeg png webp gif]
-  ALLOWED_TYPES = %w[image/jpeg image/png image/webp image/gif]
+  ALLOWED_EXTENSION = %w[jpg jpeg png webp gif].freeze
+  ALLOWED_TYPES = %w[image/jpeg image/png image/webp image/gif].freeze
   MAX_SIZE = 10.megabytes # 10 MB
-  MAX_DIMENSIONS = [5000, 5000] # 5000x5000
+  MAX_DIMENSIONS = [5000, 5000].freeze # 5000x5000
 
   THUMBNAILS = {
     thumbnail: [50, 50],
     small: [300, 300],
     medium: [600, 600],
-    large: [800, 800],
-  }
+    large: [800, 800]
+  }.freeze
 
   plugin :remove_attachment
   plugin :remove_invalid if Rails.configuration.upload_server == :app
   plugin :pretty_location
   plugin :validation_helpers
   plugin :store_dimensions, log_subscriber: nil
-  plugin :derivation_endpoint, prefix: "derivations/image"
+  plugin :derivation_endpoint, prefix: 'derivations/image'
 
   # File validations (requires `validation_helpers` plugin)
   Attacher.validate do

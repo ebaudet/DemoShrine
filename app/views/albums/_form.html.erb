@@ -18,7 +18,7 @@
       value: f.object.cached_cover_photo_data,
       id: "album-cover-photo-upload-result"
     } %>
-    <% if @album.cover_photo %>
+    <%# if @album.cover_photo %>
       <p>
         <!-- static link to the thumbnail generated on attachment -->
         <%= image_tag @album.cover_photo_url(:medium).to_s,
@@ -26,7 +26,7 @@
                       style: "max-width: 150px; max-height: 150px",
                       id: "preview-cover-photo" %>
       </p>
-    <% end %>
+    <%# end %>
     <% if @album.persisted? %>
       <%= f.input :photos, as: :file,
                   label: "Select photos",
