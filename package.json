@@ -11,8 +11,8 @@
     "randomstring": "^1.1.5",
     "turbolinks": "^5.2.0",
     "uppy": "^2.3.3",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
   },
   "version": "0.1.0",
   "devDependencies": {
