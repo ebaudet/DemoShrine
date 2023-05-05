@@ -1,7 +1,7 @@
 import 'uppy/dist/uppy.min.css'
 
 import {
-    Core,
+    Uppy,
     FileInput,
     Informer,
     ProgressBar,
@@ -75,7 +75,7 @@ const multipleFileUpload = (fileInput) => {
 }
 
 const fileUpload = (fileInput) => {
-    const uppy = Core({
+    const uppy = Uppy({
         id: fileInput.id,
         autoProceed: true,
         restrictions: {
