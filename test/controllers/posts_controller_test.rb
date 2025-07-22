@@ -43,6 +43,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_url(@post)
     end
 
-    assert_redirected_to posts_url(success: "Post was successfully destroyed.")
+    assert_redirected_to posts_url
   end
 end
