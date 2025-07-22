@@ -75,7 +75,7 @@ const multipleFileUpload = (fileInput) => {
 }
 
 const fileUpload = (fileInput) => {
-    const uppy = Uppy({
+    const uppy = new Uppy({
         id: fileInput.id,
         autoProceed: true,
         restrictions: {
