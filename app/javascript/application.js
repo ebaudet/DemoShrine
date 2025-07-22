@@ -16,8 +16,8 @@ import 'bootstrap'
 import './js/site'
 
 // Images
-const images = require.context('./images', true)
-const imagePath = (name) => images(name, true)
+// const images = require.context('./images', true)
+// const imagePath = (name) => images(name, true)
 
 import { singleFileUpload, multipleFileUpload } from './fileUpload'
 

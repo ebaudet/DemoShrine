@@ -83,11 +83,11 @@ const fileUpload = (fileInput) => {
         },
     })
 
-    if (fileInput.dataset.uploadServer == 's3') {
+    if (fileInput.dataset.uploadServer === 's3') {
         uppy.use(AwsS3, {
             companionUrl: '/', // will call Shrine's presign endpoint mounted on `/s3/params`
         })
-    } else if (fileInput.dataset.uploadServer == 's3_multipart') {
+    } else if (fileInput.dataset.uploadServer === 's3_multipart') {
         uppy.use(AwsS3Multipart, {
             companionUrl: '/' // will call uppy-s3_multipart endpoint mounted on `/s3/multipart`
         })
@@ -101,12 +101,12 @@ const fileUpload = (fileInput) => {
 }
 
 const uploadedFileData = (file, response, fileInput) => {
-    if (fileInput.dataset.uploadServer == 's3') {
+    if (fileInput.dataset.uploadServer === 's3') {
         const id = file.meta['key'].match(/^cache\/(.+)/)[1]; // object key without prefix
 
         return JSON.stringify(fileData(file, id))
-    } else if (fileInput.dataset.uploadServer == 's3_multipart') {
-        const id = response.uploadURL.match(/\/cache\/([^\?]+)/)[1]; // object key without prefix
+    } else if (fileInput.dataset.uploadServer === 's3_multipart') {
+        const id = response.uploadURL.match(/\/cache\/([^?]+)/)[1]; // object key without prefix
 
         return JSON.stringify(fileData(file, id))
     } else {
