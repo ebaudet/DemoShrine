@@ -128,6 +128,7 @@ GEM
     fastimage (2.4.0)
     ffi (1.17.2-arm64-darwin)
     ffi (1.17.2-x86_64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -187,6 +188,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.9-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.18.9-x86_64-linux-gnu)
+      racc (~> 1.4)
     pg (1.5.9)
     pp (0.6.2)
       prettyprint
@@ -199,7 +202,7 @@ GEM
       nio4r (~> 2.0)
     pygments.rb (4.0.0)
     racc (1.8.1)
-    rack (3.1.16)
+    rack (3.1.18)
     rack-mini-profiler (4.0.0)
       rack (>= 1.2.0)
     rack-session (2.1.1)
@@ -327,6 +330,7 @@ PLATFORMS
   arm64-darwin-22
   arm64-darwin-24
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   aws-sdk-s3 (~> 1.14)
