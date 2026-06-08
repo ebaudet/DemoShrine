@@ -12,8 +12,6 @@ import {
     AwsS3Multipart,
 } from 'uppy'
 
-const randomstring = require('randomstring')
-
 const singleFileUpload = (fileInput) => {
     const imagePreview = document.getElementById(fileInput.dataset.previewElement)
     const formGroup    = fileInput.parentNode
@@ -67,7 +65,7 @@ const multipleFileUpload = (fileInput) => {
         const hiddenField = document.createElement('input')
 
         hiddenField.type = 'hidden'
-        hiddenField.name = `album[photos_attributes][${randomstring.generate()}][image]`
+        hiddenField.name = `album[photos_attributes][${crypto.randomUUID()}][image]`
         hiddenField.value = uploadedFileData(file, response, fileInput)
 
         document.querySelector('form').appendChild(hiddenField)

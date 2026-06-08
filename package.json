@@ -10,7 +10,6 @@
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.7.5",
-    "randomstring": "^1.1.5",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "turbolinks": "^5.2.0",
