@@ -2,15 +2,14 @@ import 'uppy/dist/uppy.min.css'
 
 import {
     Uppy,
-    FileInput,
-    Informer,
-    ProgressBar,
     ThumbnailGenerator,
     Dashboard,
     XHRUpload,
     AwsS3,
-    AwsS3Multipart,
 } from 'uppy'
+import FileInput from '@uppy/file-input'
+import Informer from '@uppy/informer'
+import ProgressBar from '@uppy/progress-bar'
 
 const singleFileUpload = (fileInput) => {
     const imagePreview = document.getElementById(fileInput.dataset.previewElement)
@@ -86,8 +85,9 @@ const fileUpload = (fileInput) => {
             companionUrl: '/', // will call Shrine's presign endpoint mounted on `/s3/params`
         })
     } else if (fileInput.dataset.uploadServer === 's3_multipart') {
-        uppy.use(AwsS3Multipart, {
-            companionUrl: '/' // will call uppy-s3_multipart endpoint mounted on `/s3/multipart`
+        uppy.use(AwsS3, {
+            companionUrl: '/', // will call uppy-s3_multipart endpoint mounted on `/s3/multipart`
+            shouldUseMultipart: true,
         })
     } else {
         uppy.use(XHRUpload, {
