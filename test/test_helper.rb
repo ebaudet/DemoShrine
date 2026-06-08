@@ -25,11 +25,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def uploaded_image(filename: "image.png", mime_type: "image/png")
-    source = if ImageUploader::ALLOWED_TYPES.include?(mime_type)
-               StringIO.new(TEST_IMAGE_DATA)
-             else
-               StringIO.new("not an image")
-             end
+    source = StringIO.new(TEST_IMAGE_DATA)
 
     ImageUploader.upload(
       source,

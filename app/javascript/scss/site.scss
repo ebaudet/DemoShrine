@@ -1,15 +1,17 @@
-@import "~bootstrap/scss/bootstrap.scss";
+@use "sass:map";
+
+@import "bootstrap/scss/bootstrap";
 
 // 1. Include functions & variables first
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
 
 $custom-colors: (
         "bootstrap": #563d7c,
         "simpleform": #00617f
 );
-$theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors: map.merge($theme-colors, $custom-colors);
 
 //// Custom bootstrap variables must be set or imported *before* bootstrap.
 //@import "~bootstrap";

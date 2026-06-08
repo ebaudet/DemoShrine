@@ -28,8 +28,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(?:sa|sc|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(?:sa|sc)ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              api: 'modern',
+              sassOptions: {
+                loadPaths: [path.resolve(__dirname, '..', '..', 'node_modules')],
+                quietDeps: true,
+                silenceDeprecations: ['import'],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|eot|woff2|woff|ttf|svg)$/i,
@@ -43,5 +61,9 @@ module.exports = {
   },
   optimization: {
     moduleIds: 'deterministic',
+  },
+  performance: {
+    maxAssetSize: 600000,
+    maxEntrypointSize: 900000,
   },
 };
