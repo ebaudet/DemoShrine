@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.3.7"
+ruby '3.3.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.2.0'
+gem 'rails', '~> 7.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -37,7 +37,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :windows]
+  gem 'byebug', platforms: %i[mri windows]
 end
 
 group :development do
@@ -60,17 +60,17 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:windows, :jruby]
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
-gem 'shrine'
 gem 'aws-sdk-s3', '~> 1.14'
-gem 'image_processing', '~> 1.10'
-gem 'uppy-s3_multipart', '>= 0.3.2'
-gem 'marcel'
 gem 'fastimage'
+gem 'image_processing', '~> 1.10'
+gem 'marcel'
+gem 'shrine'
+gem 'uppy-s3_multipart', '>= 0.3.2'
 
 gem 'sucker_punch'
 
-gem "simplecov", "~> 0.22.0", group: :test
+gem 'simplecov', '~> 0.22.0', group: :test
 
-gem "minitest", "~> 5.25", group: :test
+gem 'minitest', '~> 5.25', group: :test
