@@ -119,6 +119,7 @@ GEM
     content_disposition (1.0.0)
     crass (1.0.6)
     date (3.5.1)
+    docile (1.4.1)
     down (5.6.0)
       addressable (~> 2.8)
       base64 (~> 0.3)
@@ -174,9 +175,7 @@ GEM
     mini_magick (5.3.1)
       logger
     mini_mime (1.1.5)
-    minitest (6.0.6)
-      drb (~> 2.0)
-      prism (~> 1.5)
+    minitest (5.27.0)
     msgpack (1.8.1)
     net-imap (0.6.4)
       date
@@ -291,6 +290,12 @@ GEM
     simple_form (5.4.1)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.13.2)
+    simplecov_json_formatter (0.1.4)
     spring (4.6.0)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
@@ -360,6 +365,7 @@ DEPENDENCIES
   kramdown-parser-gfm
   listen (~> 3.3)
   marcel
+  minitest (~> 5.25)
   pg (~> 1.1)
   puma (>= 5.6.4)
   pygments.rb
@@ -370,6 +376,7 @@ DEPENDENCIES
   selenium-webdriver
   shrine
   simple_form
+  simplecov (~> 0.22.0)
   spring
   sucker_punch
   turbolinks (~> 5)

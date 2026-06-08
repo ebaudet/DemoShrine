@@ -70,3 +70,7 @@ gem 'marcel'
 gem 'fastimage'
 
 gem 'sucker_punch'
+
+gem "simplecov", "~> 0.22.0", group: :test
+
+gem "minitest", "~> 5.25", group: :test

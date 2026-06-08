@@ -1,0 +1,7 @@
+one:
+  name: First album
+  cover_photo_data: '{"id":"cover-one.png","storage":"cache","metadata":{"filename":"cover.png","size":68,"mime_type":"image/png","width":1,"height":1}}'
+
+two:
+  name: Second album
+  cover_photo_data: '{"id":"cover-two.png","storage":"cache","metadata":{"filename":"cover.png","size":68,"mime_type":"image/png","width":1,"height":1}}'

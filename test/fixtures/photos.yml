@@ -1,0 +1,4 @@
+one:
+  album: one
+  titre: First photo
+  image_data: '{"id":"photo-one.png","storage":"cache","metadata":{"filename":"photo.png","size":68,"mime_type":"image/png","width":1,"height":1}}'
