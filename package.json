@@ -19,6 +19,7 @@
     "webpack-remove-empty-scripts": "^1.0.3"
   },
   "version": "0.1.0",
+  "packageManager": "yarn@1.22.22",
   "devDependencies": {},
   "scripts": {
     "build": "webpack --config ./config/webpack/webpack.config.js"
